@@ -2,6 +2,7 @@ import socket
 from datetime import datetime, timezone
 import sys
 
+
 def receive_udp_message(ip, port):
     try:
         sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
@@ -21,6 +22,7 @@ def receive_udp_message(ip, port):
     except Exception as error:
         print(f"An error occurred: {error}")
         sys.exit(1)
+
 
 if __name__ == "__main__":
     listen_ip = '0.0.0.0'
