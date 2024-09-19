@@ -23,7 +23,7 @@ Make sure Python is installed on both devices (sender and receiver).
 
 ### Clone the Repository
 
-```bash
+```
 git clone https://github.com/NitroStar654/PyNetMessengerr.git
 cd PyNetMessenger
 ```
@@ -37,15 +37,14 @@ This project does not have any external dependencies besides Python. Ensure you 
 
 The sender.py script allows you to send messages to the server.
 
-### Running sender.py
+#### Running sender.py
 
-```bash
+```
 python sender.py <server_ip> <port>
 ```
 
-### Example:
-
-```bash
+#### Example:
+```
 python sender.py 192.168.1.10 5000
 ```
 
@@ -55,15 +54,14 @@ You will then be able to type a message, which will be sent to the server at the
 
 The receiver.py script sets up the server to listen for incoming messages.
 
-### Running receiver.py
+#### Running receiver.py
 
-```bash
+```
 python receiver.py <port>
 ```
 
-### Example:
-
-```bash
+Example:
+```
 python receiver.py 5000
 ```
 
@@ -73,4 +71,8 @@ The server will then listen on the specified port, waiting for messages from the
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
+---
+
 We hope you find PyNetMessenger useful for your learning and development projects! If you have any questions or encounter any issues, feel free to open an issue on GitHub.
+
+---
