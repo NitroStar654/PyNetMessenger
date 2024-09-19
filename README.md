@@ -71,6 +71,6 @@ The server will then listen on the specified port, waiting for messages from the
 
 ## License
 
-This project is licensed under the MIT License. See the LICENSE file for details.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 We hope you find PyNetMessenger useful for your learning and development projects! If you have any questions or encounter any issues, feel free to open an issue on GitHub.
