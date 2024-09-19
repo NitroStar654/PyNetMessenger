@@ -12,21 +12,33 @@ def send_udp_message(ip, port, message):
     except socket.error as socket_error:
         print(f"Error: {socket_error}")
         sys.exit(1)
+    except KeyboardInterrupt:
+        print("\nProgram stopped")
+        sys.exit(0)
     finally:
         sock.close()
+
+
+def get_port():
+    while True:
+        port_input = input("Destination Port (default 7777): ")
+        if port_input.strip() == "":
+            return 7777
+        try:
+            port = int(port_input)
+            if 1 <= port <= 65535:
+                return port
+            else:
+                print("Error: Port must be between 1 and 65535.")
+        except ValueError:
+            print("Error: Destination port must be a valid integer.")
 
 
 if __name__ == "__main__":
     try:
         destination_ip = input("Destination IP: ")
 
-        while True:
-            destination_port = input("Destination Port: ")
-            try:
-                destination_port = int(destination_port)
-                break
-            except ValueError:
-                print("Error: Destination port must be a valid integer.")
+        destination_port = get_port()
 
         print("Press Ctrl+C to exit")
         while True:
