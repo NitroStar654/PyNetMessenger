@@ -24,7 +24,7 @@ Make sure Python is installed on both devices (sender and receiver).
 ### Clone the Repository
 
 ```
-git clone https://github.com/NitroStar654/PyNetMessengerr.git
+git clone https://github.com/NitroStar654/PyNetMessenger.git
 cd PyNetMessenger
 ```
 ### Install Dependencies
