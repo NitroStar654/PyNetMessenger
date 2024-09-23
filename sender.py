@@ -2,7 +2,7 @@ import sys
 import socket
 import re
 
-DEFAULT_PORT = 5000
+DEFAULT_PORT = 3000
 IP_REGEX = r"^\d{1,3}(\.\d{1,3}){3}$"
 
 
