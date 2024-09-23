@@ -2,7 +2,7 @@ import socket
 import sys
 from datetime import datetime, timezone
 
-DEFAULT_LISTEN_PORT = 5000
+DEFAULT_LISTEN_PORT = 3000
 sock = None
 
 
