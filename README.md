@@ -60,7 +60,7 @@ The receiver.py script sets up the server to listen for incoming messages.
 python receiver.py <port>
 ```
 
-Example:
+#### Example:
 ```
 python receiver.py 5000
 ```
