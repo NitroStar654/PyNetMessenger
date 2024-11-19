@@ -1,6 +1,7 @@
 # PyNetMessenger
 
-Welcome to the PyNetMessenger project! This repository contains scripts for creating a simple messaging system over a local network using Python sockets.
+Welcome to the PyNetMessenger project! This repository contains scripts for creating a simple messaging system over a
+local network using Python sockets.
 
 ## Table of Contents
 
@@ -13,13 +14,15 @@ Welcome to the PyNetMessenger project! This repository contains scripts for crea
 
 ## Overview
 
-PyNetMessenger provides a simple client-server setup that enables communication between two devices on the same network. The sender sends messages, while the receiver listens for incoming messages on a specified port.
+PyNetMessenger provides a simple client-server setup that enables communication between two devices on the same network.
+The sender sends messages, while the receiver listens for incoming messages on a specified port.
 
 This project is great for learning about Python socket programming and basic networking concepts.
 
 ## Installation
 
-Make sure Python is installed on both devices (sender and receiver).
+Make sure Python 3 is installed on both devices (sender and receiver). This project does not have any external
+dependencies
 
 ### Clone the Repository
 
@@ -27,45 +30,52 @@ Make sure Python is installed on both devices (sender and receiver).
 git clone https://github.com/NitroStar654/PyNetMessenger.git
 cd PyNetMessenger
 ```
-### Install Dependencies
-
-This project does not have any external dependencies besides Python. Ensure you are using Python 3.x.
 
 ## Usage
 
 ### Sender Usage
 
-The sender.py script allows you to send messages to the server.
+The `sender.py` script allows you to send messages to the receiver.
 
 #### Running sender.py
 
 ```
-python sender.py <server_ip> <port>
+python sender.py
 ```
 
 #### Example:
+
 ```
-python sender.py 192.168.1.10 5000
+python sender.py
+Destination IP: 192.168.0.25
+Destination Port (default 3000): 5215
+Message to send: Hello!
 ```
 
-You will then be able to type a message, which will be sent to the server at the specified IP and port.
+You will then be able to type a message, which will be sent to the receiver at the specified IP and port.
 
 ### Receiver Usage
 
-The receiver.py script sets up the server to listen for incoming messages.
+The `receiver.py` script sets up the receiver to listen for incoming messages.
 
 #### Running receiver.py
 
 ```
-python receiver.py <port>
+python receiver.py
 ```
 
 #### Example:
+
 ```
-python receiver.py 5000
+python receiver.py
+Listener Port (default 3000): 5215
+Listening on 0.0.0.0:5215... Press Ctrl+C to exit
+20:49:23 GMT - Received message from 192.168.0.20: Hello!
 ```
 
-The server will then listen on the specified port, waiting for messages from the sender.
+The server will then listen on the specified port, waiting for messages from the sender. The default 0.0.0.0 address is
+used
+to listen on all network interfaces.
 
 ## License
 
@@ -73,6 +83,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ---
 
-We hope you find PyNetMessenger useful for your learning and development projects! If you have any questions or encounter any issues, feel free to open an issue on GitHub.
+We hope you find PyNetMessenger useful for your learning and development projects! If you have any questions or
+encounter any issues, feel free to open an issue on GitHub.
 
 ---
