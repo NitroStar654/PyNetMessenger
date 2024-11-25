@@ -22,7 +22,7 @@ This project is great for learning about Python socket programming and basic net
 ## Installation
 
 Make sure Python 3 is installed on both devices (sender and receiver). This project does not have any external
-dependencies
+dependencies.
 
 ### Clone the Repository
 
