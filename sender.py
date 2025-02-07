@@ -15,8 +15,12 @@ def get_port():
         port_input = input(f"Destination Port (default {DEFAULT_PORT}): ")
         if not port_input:
             return DEFAULT_PORT
-        if port_input.isdigit() and 1 <= int(port_input) <= 65535:
-            return int(port_input)
+        try:
+            port = int(port_input)
+            if 1 <= port <= 65535:
+                return port
+        except ValueError:
+            pass
         print("Error: Port must be a valid integer between 1 and 65535.")
 
 
@@ -24,8 +28,8 @@ def send_udp_message(ip, port, message):
     with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as sock:
         try:
             sock.sendto(message.encode(), (ip, port))
-        except (socket.gaierror, socket.error) as error:
-            print(f"Error: {error}")
+        except (socket.gaierror, socket.error) as sock_error:
+            print(f"Error: {sock_error}")
             sys.exit(1)
 
 
