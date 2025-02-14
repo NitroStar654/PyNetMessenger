@@ -10,7 +10,7 @@ local network using Python sockets.
 - [Usage](#Usage)
     - [Sender Usage](#Sender-Usage)
     - [Receiver Usage](#Receiver-Usage)
-- [Contributing](#contributing)
+- [Contributing](#Contributing)
 - [License](#License)
 
 ## Overview
