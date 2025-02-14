@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9534497e-95e8-4e84-8712-31ed2eb5a36b" name="Changes" comment="Refactor port input handling in sender.py and receiver.py to use argparse; update README.md for clarity">
+    <list default="true" id="9534497e-95e8-4e84-8712-31ed2eb5a36b" name="Changes" comment="Refactor port input handling in sender.py and receiver.py to use argparse; update README.md for clarity and usage examples">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/receiver.py" beforeDir="false" afterPath="$PROJECT_DIR$/receiver.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sender.py" beforeDir="false" afterPath="$PROJECT_DIR$/sender.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +59,7 @@
     "nodejs_interpreter_path": "C:/Users/edoar/AppData/Roaming/JetBrains/PyCharm2024.3/node/versions/22.13.1/node",
     "nodejs_package_manager_path": "npm",
     "rearrange.code.on.save": "true",
-    "settings.editor.selected.configurable": "editor.reader.mode",
+    "settings.editor.selected.configurable": "preferences.keymap",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -122,7 +119,7 @@
       <workItem from="1738969761482" duration="1700000" />
       <workItem from="1739562282182" duration="34000" />
       <workItem from="1739562356292" duration="1361000" />
-      <workItem from="1739569484591" duration="984000" />
+      <workItem from="1739569484591" duration="1424000" />
     </task>
     <task id="LOCAL-00001" summary="Refactor port input handling in sender.py and receiver.py; update project configuration files">
       <option name="closed" value="true" />
@@ -132,7 +129,15 @@
       <option name="project" value="LOCAL" />
       <updated>1738969258896</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Refactor port input handling in sender.py and receiver.py to use argparse; update README.md for clarity and usage examples">
+      <option name="closed" value="true" />
+      <created>1739570605094</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1739570605094</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -151,7 +156,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Refactor port input handling in sender.py and receiver.py; update project configuration files" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactor port input handling in sender.py and receiver.py; update project configuration files" />
+    <MESSAGE value="Refactor port input handling in sender.py and receiver.py to use argparse; update README.md for clarity and usage examples" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor port input handling in sender.py and receiver.py to use argparse; update README.md for clarity and usage examples" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/PyNetMessenger$python_sender_py__i_192_168_0_25__p_5215.coverage" NAME="python sender.py -i 192.168.0.25 -p 5215 Coverage Results" MODIFIED="1739569511442" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
