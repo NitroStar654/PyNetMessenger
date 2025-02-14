@@ -5,12 +5,13 @@ local network using Python sockets.
 
 ## Table of Contents
 
-- [Overview](#overview)
-- [Installation](#installation)
-- [Usage](#usage)
-    - [Sender Usage](#sender-usage)
-    - [Receiver Usage](#receiver-usage)
-- [License](#license)
+- [Overview](#Overview)
+- [Installation](#Installation)
+- [Usage](#Usage)
+    - [Sender Usage](#Sender-Usage)
+    - [Receiver Usage](#Receiver-Usage)
+- [Contributing](#contributing)
+- [License](#License)
 
 ## Overview
 
@@ -26,7 +27,7 @@ dependencies.
 
 ### Clone the Repository
 
-```
+```bash
 git clone https://github.com/NitroStar654/PyNetMessenger.git
 cd PyNetMessenger
 ```
@@ -39,16 +40,15 @@ The `sender.py` script allows you to send messages to the receiver.
 
 #### Running sender.py
 
-```
-python sender.py
+```bash
+python sender.py -i <Destination IP> -p <Destination Port>
 ```
 
 #### Example:
 
-```
-python sender.py
-Destination IP: 192.168.0.25
-Destination Port (default 3000): 5215
+```bash
+python sender.py -i 192.168.0.25 -p 5215
+You will send messages to 192.168.0.25:5215
 Message to send: Hello!
 ```
 
@@ -60,22 +60,28 @@ The `receiver.py` script sets up the receiver to listen for incoming messages.
 
 #### Running receiver.py
 
-```
-python receiver.py
+```bash
+python receiver.py -p <Listener Port>
 ```
 
 #### Example:
 
-```
-python receiver.py
-Listener Port (default 3000): 5215
+```bash
+python receiver.py -p 5215
 Listening on 0.0.0.0:5215... Press Ctrl+C to exit
-20:49:23 GMT - Received message from 192.168.0.20: Hello!
+[20/10/2024 20:49:23 UTC] 192.168.0.20:5215 → Hello!
 ```
 
 The server will then listen on the specified port, waiting for messages from the sender. The default 0.0.0.0 address is
-used
-to listen on all network interfaces.
+used to listen on all network interfaces.
+
+## Contributing
+
+We welcome contributions to PyNetMessenger! If you'd like to improve the project, feel free to:
+
+- Report bugs or suggest features by opening an issue.
+- Submit a pull request with enhancements, bug fixes, or documentation improvements.
+- Share your feedback and ideas to help us make PyNetMessenger even better.
 
 ## License
 
@@ -83,7 +89,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ---
 
-We hope you find PyNetMessenger useful for your learning and development projects! If you have any questions or
-encounter any issues, feel free to open an issue on GitHub.
+We hope you find PyNetMessenger useful for your learning and development projects! If you'd like to contribute, check
+out the [Contributing](#Contributing) section. Your feedback and improvements are always welcome!
 
 ---

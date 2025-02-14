@@ -1,3 +1,4 @@
+import argparse
 import re
 import socket
 import sys
@@ -10,18 +11,22 @@ def validate_ip(ip):
     return re.match(IP_REGEX, ip) and all(0 <= int(num) <= 255 for num in ip.split("."))
 
 
-def get_port():
-    while True:
-        port_input = input(f"Destination Port (default {DEFAULT_PORT}): ")
-        if not port_input:
-            return DEFAULT_PORT
-        try:
-            port = int(port_input)
-            if 1 <= port <= 65535:
-                return port
-        except ValueError:
-            pass
+def parse_arguments():
+    parser = argparse.ArgumentParser(description="UDP Sender")
+    parser.add_argument("-i", "--ip", required=True, help="Destination IP address")
+    parser.add_argument("-p", "--port", type=int, default=DEFAULT_PORT,
+                        help=f"Destination port (default: {DEFAULT_PORT})")
+    args = parser.parse_args()
+
+    if not validate_ip(args.ip):
+        print("Error: Invalid IP address format.")
+        sys.exit(1)
+
+    if not (1 <= args.port <= 65535):
         print("Error: Port must be a valid integer between 1 and 65535.")
+        sys.exit(1)
+
+    return args.ip, args.port
 
 
 def send_udp_message(ip, port, message):
@@ -35,10 +40,10 @@ def send_udp_message(ip, port, message):
 
 if __name__ == "__main__":
     try:
-        while not (destination_ip := input("Destination IP: ").strip()) or not validate_ip(destination_ip):
-            print("Error: Invalid IP address format.")
-        destination_port = get_port()
+        destination_ip, destination_port = parse_arguments()
         print("Press Ctrl+C to exit")
+        print(f"You will send messages to {destination_ip}:{destination_port}")
+
         while True:
             if message_to_send := input("Message to send: ").strip():
                 send_udp_message(destination_ip, destination_port, message_to_send)

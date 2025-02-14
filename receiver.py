@@ -1,40 +1,34 @@
+import argparse
 import socket
 import sys
 from datetime import datetime, timezone
 
 DEFAULT_PORT = 3000
+BUFFER_SIZE = 4096
 
 
-def get_listen_port():
-    while True:
-        port_input = input(f"Listener Port (default {DEFAULT_PORT}): ")
-        if not port_input:
-            return DEFAULT_PORT
-        try:
-            port = int(port_input)
-            if 1 <= port <= 65535:
-                return port
-        except ValueError:
-            pass
-        print("Error: Port must be a valid integer between 1 and 65535.")
+def parse_args():
+    parser = argparse.ArgumentParser(description="UDP Listener")
+    parser.add_argument("-p", "--port", type=int, default=DEFAULT_PORT, help="Listening port (default: 3000)")
+    return parser.parse_args()
 
 
 def receive_udp_message(ip, port):
     with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as sock:
         sock.bind((ip, port))
-        print(f"Listening on {ip}:{port}... Press Ctrl+C to exit")
+        print(f"Listening on {ip}:{port}... (Press Ctrl+C to stop)")
+
         while True:
-            data, addr = sock.recvfrom(1024)
+            data, addr = sock.recvfrom(BUFFER_SIZE)
             message = data.decode().strip()
-            current_time = datetime.now(timezone.utc).strftime('%H:%M:%S UTC')
-            print(f"{current_time} - Received message from {addr[0]}: {message}")
+            current_time = datetime.now(timezone.utc).strftime("%d/%m/%Y %H:%M:%S UTC")
+            print(f"[{current_time}] {addr[0]}:{addr[1]} → {message}")
 
 
 if __name__ == "__main__":
     try:
-        listen_ip = '0.0.0.0'
-        listen_port = get_listen_port()
-        receive_udp_message(listen_ip, listen_port)
+        args = parse_args()
+        receive_udp_message("0.0.0.0", args.port)
     except KeyboardInterrupt:
         print("\nProgram stopped")
         sys.exit(0)
